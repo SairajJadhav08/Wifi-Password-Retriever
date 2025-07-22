@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi Password Retriever</title>
+    
+    <!-- Tailwind CSS for base styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900">Wi-Fi Password Retriever</h1>
+            <p class="text-gray-600 mt-2">Fetch and save Wi-Fi passwords stored on this computer.</p>
+        </header>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            <button id="fetch-btn" class="btn btn-primary text-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071a10 10 0 0114.142 0M1.394 9.393a15 15 0 0121.212 0" />
+                </svg>
+                Fetch Wi-Fi Passwords
+            </button>
+            <div id="loader" class="hidden loader mx-auto my-4"></div>
+            <div id="status" class="mt-4 text-sm text-gray-500"></div>
+        </div>
+
+        <div id="results-container" class="mt-8 hidden">
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
+                <h2 class="text-2xl font-bold">Retrieved Networks</h2>
+                <div id="download-buttons" class="flex space-x-2">
+                    <button id="save-txt" class="btn btn-secondary text-sm">Save as TXT</button>
+                    <button id="save-csv" class="btn btn-secondary text-sm">Save as CSV</button>
+                    <button id="save-json" class="btn btn-secondary text-sm">Save as JSON</button>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">SSID (Network Name)</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Password</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wifi-table-body" class="bg-white divide-y divide-gray-200">
+                        <!-- Data will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file. 'defer' ensures it runs after the HTML is loaded. -->
+    <script src="script.js" defer></script>
+</body>
+</html>
