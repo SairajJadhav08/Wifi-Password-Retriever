@@ -68,9 +68,9 @@ You should see a message indicating the server is running on http://127.0.0.1:50
 Navigate to the project folder in your file explorer and double-click the index.html file. It will open in your default web browser, and you can now use the application.
 
 📁 File Structure
-.
-├── wifi_server.py    # The Python Flask backend that runs the 'netsh' commands.
-├── index.html        # The main HTML file for the user interface structure.
-├── style.css         # Custom CSS for styling the application.
-├── script.js         # JavaScript for frontend logic, API calls, and event handling.
-└── README.md         # You are here!
+    .
+    ├── wifi_server.py    # The Python Flask backend that runs the 'netsh' commands.
+    ├── index.html        # The main HTML file for the user interface structure.
+    ├── style.css         # Custom CSS for styling the application.
+    ├── script.js         # JavaScript for frontend logic, API calls, and event handling.
+    └── README.md         # You are here!
